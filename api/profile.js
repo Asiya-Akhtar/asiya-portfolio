@@ -18,6 +18,8 @@ export default async function handler(req, res) {
     }
   } catch (error) {
     console.error('List error:', error);
-    return res.status(500).json({ error: 'Failed to retrieve profile picture' });
+    return res.status(500).json({ 
+      error: error.message || 'Failed to retrieve profile picture (Unknown error)' 
+    });
   }
 }

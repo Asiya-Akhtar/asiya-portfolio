@@ -35,6 +35,8 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true, url: blob.url });
   } catch (error) {
     console.error('Upload error:', error);
-    return res.status(500).json({ error: 'Failed to upload image' });
+    return res.status(500).json({ 
+      error: error.message || 'Failed to upload image (Unknown error)' 
+    });
   }
 }
