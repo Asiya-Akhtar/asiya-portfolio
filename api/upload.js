@@ -29,6 +29,7 @@ export default async function handler(req, res) {
     const blob = await put('profile-pic', buffer, {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: mimeType,
     });
 
